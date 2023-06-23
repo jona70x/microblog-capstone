@@ -77,4 +77,3 @@ function logout() {
       window.location.assign("/"); // redirect back to landing page
     });
 }
-
