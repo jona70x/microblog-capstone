@@ -13,12 +13,9 @@ body {
   }
 }
 
-.g-height-50 {
-  height: 50px;
-}
-
-.g-width-50 {
-  width: 50px !important;
+.img-size {
+  height: 5rem;
+  width: 5rem !important;
 }
 
 @media (min-width: 0) {
@@ -45,4 +42,44 @@ body {
 
 .media-comment {
   margin-top: 20px;
+}
+
+.svg-container {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.svg-container__like:hover {
+  background-color: #0d6efd;
+  cursor: pointer;
+}
+.svg-container__delete:hover {
+  background-color: #dc3545;
+  cursor: pointer;
+}
+.svg-container:hover svg {
+  fill: white;
+}
+
+.side-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.icon-box {
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.icon-box:hover.profile:hover {
+  background-color: #0d6efd;
+}
+.icon-box:hover.logout:hover {
+  background-color: #dc3545;
+}
+
+.icon-box:hover .side-icon,
+.icon-box:hover h5 {
+  fill: white;
+  color: white;
 }
