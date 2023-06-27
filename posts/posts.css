@@ -1,6 +1,8 @@
 body {
   margin-top: 20px;
-  background: #eee;
+  background: #d7e6e5;
+  color: #20203a;
+  font-size: 1.2rem;
 }
 @media (min-width: 0) {
   .g-mr-15 {
@@ -29,7 +31,7 @@ body {
 }
 
 .u-shadow-v18 {
-  box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.15);
+  box-shadow: 20px 15px 5px #f19d78;
 }
 
 .g-color-gray-dark-v4 {
