@@ -5,7 +5,7 @@ const token = getLoginData().token;
 console.log(token);
 
 
-const divContent = document.getElementById("content");
+let divContent = document.getElementById("content");
 const newPost = document.getElementById("postInfo");
 
 const sendPost = async () => {
@@ -21,23 +21,18 @@ const sendPost = async () => {
 }
 
 const displayMyPosts = async () => {
-    const response = await fetch("https://microbloglite.herokuapp.com/api/posts", {
+    const response = await fetch("https://microbloglite.herokuapp.com/api/posts?limit=500", {
         method: "GET",
         headers: {Authorization: `Bearer ${token}`},
     }); 
     const data = await response.json();
     console.log(data);
-    findMyPosts(data);
-}
-
-displayMyPosts();
-const username = getLoginData().username;
-
-
-function findMyPosts(array){
-    for (let i = 0; i < array.length; i ++){
-        if (array[i].username === username){
-            console.log(array[i].text);
+    const username = getLoginData().username;
+    for (let i = 0; i < data.length; i ++){
+        if (data[i].username === username){
+            divContent.innerHTML += `@${data[i].username}, ${data[i].createdAt}, ${data[i].text} <br>`;
         }
     }
 }
+
+displayMyPosts();
