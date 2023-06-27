@@ -3,6 +3,7 @@
 "use strict";
 const postsContainer = document.querySelector(".posts-container");
 const loginData = getLoginData();
+const logoutBtn = document.querySelector(".logout-btn");
 console.log(loginData);
 const token = loginData.token;
 
@@ -16,6 +17,11 @@ const avatarStyles = [
   "pixel-art",
   "personas",
   "miniavs",
+  "adventurer",
+  "shapes",
+  "adventurer-neutral",
+  "avataaars",
+  "big-ears",
 ];
 const seedStyles = ["Felix", "Aneka"];
 
@@ -46,6 +52,17 @@ const generateAvatar = async () => {
   return url;
 };
 
+const addLike = async function (postId) {
+  const response = await fetch(apiBaseURL + "/likes", {
+    method: "POST",
+    body: JSON.stringify({
+      postId,
+    }),
+  });
+
+  console.log(response);
+};
+
 const createPostsMarkup = async () => {
   const posts = await getPosts();
 
@@ -62,7 +79,7 @@ const createPostsMarkup = async () => {
     const avatarUrl = await generateAvatar();
     html += `
     <div
-      class="col-12 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-2"
+      class="col-12 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4" data-post-id="${post._id}"
     >
       <div class="col-12 d-flex mb-3 justify-content-between">
         <div class="d-flex">
@@ -91,10 +108,14 @@ const createPostsMarkup = async () => {
       </p>
 
       <div class="d-flex my-0 justify-content-between">
+      <div class='d-flex justify-content-center align-items-center'>
+        <p class='text-muted'>${post.likes.length} People liked this</p>
+      </div>
+      <div class='d-flex gap-2'>
         <div
           class="svg-container svg-container__like rounded border rounded-circle d-flex align-items-center justify-content-center"
         >
-          <div>
+          <div class='like-container'>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -130,12 +151,22 @@ const createPostsMarkup = async () => {
             </svg>
           </div>
         </div>
+        </div>
       </div>
     </div>
     `;
+
+
   }
 
   postsContainer.insertAdjacentHTML("beforeend", html);
 };
 
 createPostsMarkup();
+
+logoutBtn.addEventListener("click", logout);
+postsContainer.addEventListener("click", (e) => {
+  console.log(e.target);
+ const postContainer = document.querySelector('[data-post-id]')
+ console.log(postContainer.dataset.postId);
+});
