@@ -24,7 +24,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="css/profile.css" />
 
-    <title>Login to the Microblog Network!</title>
+    <title>Your Profile</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="js/auth.js"></script>
@@ -37,6 +37,25 @@
 
     <main>
       <h1>PROFILE PAGE</h1>
+      <nav>
+        <ul class="nav nav-tabs" >
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Settings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="logout()">Log Out</a>
+            </div>
+          </li>
+        </ul>
+        <a href="posts/index.html">Home</a>
+      </nav>
+      
+
+      <input type="text" placeholder="New post" id="postInfo">
+      <button onclick="sendPost()"> Post </button>
+
+      <div id="content"></div>
     </main>
 
     <footer></footer>
