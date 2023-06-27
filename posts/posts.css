@@ -80,8 +80,12 @@ body {
   background-color: #dc3545;
 }
 
-.icon-box:hover .side-icon,
-.icon-box:hover h5 {
+.icon-box:hover {
   fill: white;
   color: white;
+}
+
+.liked, .liked svg {
+  fill: white;
+  background-color: #0d6efd;
 }
