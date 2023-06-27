@@ -110,7 +110,11 @@ const deletePost = async (postId) => {
 
   console.log(response);
   if (response.ok) {
-   postToDelete.remove()
+    postToDelete.classList.add("fade-in-animation");
+
+    setTimeout(function () {
+      postToDelete.remove();
+    }, 500);
   }
 };
 

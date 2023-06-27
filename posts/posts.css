@@ -89,3 +89,9 @@ body {
   fill: white;
   background-color: #0d6efd;
 }
+
+
+.fade-in-animation {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
