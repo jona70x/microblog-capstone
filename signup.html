@@ -32,7 +32,22 @@
       if (isLoggedIn() === true) window.location.replace("/posts");
     </script> -->
 
-    
+    <!-- Background animation -->
+    <div class="area" >
+      <ul class="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+      </ul>
+    </div >
+
   </head>
   <body>
     <header>
@@ -40,57 +55,41 @@
 
     <main>
 
-      
-
-      <div class="container context d-flex justify-content-center">
+      <div class="container">
         <div class="card mb-3" style="width: 750px;">
           <div class="row g-0">
             <div class="col">
-              <img src="/assests/images/reg.png" class="img-fluid rounded-start" alt="...">
+              <img src="/assests/images/registration1.png" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-5">
+              <div class="card-title" style="text-align: center;">
+                <h1>Register</h1>
+              </div>
               <div class="card-body">
                 <div>
                   <label for="fullname" class="form-label">Full Name</label>
-                  <input type="text" class="form-control" id="fullname" required/>
+                  <input type="text" class="form-control" id="fullname" required>
                 </div>
                 
                 <div>
                   <label for="username" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="username" required/>
+                  <input type="text" class="form-control" id="username" required>
                 </div>
 
                 <div>
                   <label for="password" class="form-label">Password</label>
-                  <input type="text" class="form-control" id="password" required/>
+                  <input type="text" class="form-control" id="password" required>
                 </div>
 
-                <button onclick="createNewUser()">click this</button>
+                <button class="btn btn-light" onclick="createNewUser()">Sign Up</button>
 
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="area" >
-        <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-        </ul>
-      </div >
-
       
 
-    
     </main>
 
     <footer></footer>
