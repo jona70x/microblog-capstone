@@ -82,152 +82,7 @@
       </div>
 
       <div class="row col-6">
-        <section class="row">
-          <form class="mb-4">
-            <div
-              class="col-12 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4"
-            >
-              <div class="col-12 d-flex mb-3 justify-content-between p-0">
-                <div class="d-flex">
-                  <div>
-                    <img
-                      class="img-size border border-2 rounded-circle g-mt-3 g-mr-15"
-                      src="https://api.dicebear.com/6.x/lorelei/svg"
-                      alt="Avatar"
-                    />
-                  </div>
-
-                  <div class="g-mb-15">
-                    <h5 class="h5 g-color-gray-dark-v1 mt-2 mb-0">
-                      Actual User
-                    </h5>
-                    <span class="g-color-gray-dark-v4 g-font-size-12"
-                      >Dump a post in the litter box</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <textarea
-                class="form-control text-muted mb-2"
-                name="post-text"
-                id="post-text"
-                cols="5"
-                rows="5"
-                placeholder="What are you meowing about?"
-              ></textarea>
-
-              <div class="d-flex my-0 mx-0 gap-1 justify-content-between px-0">
-                <div class="d-flex mt-2 gap-1">
-                  <button
-                    type="reset"
-                    class="svg-container svg-container__delete rounded border rounded-circle d-flex align-items-center justify-content-center delete-functionality"
-                  >
-                    <div class="delete-functionality">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-trash delete-functionality"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          class="delete-functionality"
-                          d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"
-                        />
-                        <path
-                          class="delete-functionality"
-                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="svg-container svg-container__add rounded border rounded-circle d-flex align-items-center justify-content-center"
-                  >
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-person-fill-add"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                        />
-                        <path
-                          d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="svg-container svg-container__location rounded border rounded-circle d-flex align-items-center justify-content-center"
-                  >
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-geo-alt"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
-                        />
-                        <path
-                          d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="svg-container svg-container__reaction rounded border rounded-circle d-flex align-items-center justify-content-center"
-                  >
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-emoji-laughing-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-
-                <div class="d-flex mt-2">
-                  <button
-                    class="svg-container svg-container__post rounded border rounded-circle d-flex align-items-center justify-content-center post-functionality"
-                  >
-                    <div class="post-functionality">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-send"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </section>
+        <section class="row create-post-container"></section>
         <section class="row posts-container gap-3"></section>
       </div>
 
@@ -237,6 +92,8 @@
     <footer></footer>
 
     <!-- Page-specific code -->
+    <script src="../js/helpers.js"></script>
+    <script src="../js/posting-funcs.js"></script>
     <script src="posts.js"></script>
   </body>
 </html>

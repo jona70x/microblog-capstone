@@ -51,7 +51,8 @@ body {
   height: 2.3rem;
 }
 
-.svg-container__like:hover, .svg-container__post:hover  {
+.svg-container__like:hover,
+.svg-container__post:hover {
   background-color: #0d6efd;
   cursor: pointer;
 }
@@ -68,7 +69,7 @@ body {
   cursor: pointer;
 }
 .svg-container__reaction:hover {
-  background-color:#ffc107;
+  background-color: #ffc107;
   cursor: pointer;
 }
 .svg-container:hover svg {
@@ -97,13 +98,36 @@ body {
   color: white;
 }
 
-.liked, .liked svg {
+.liked,
+.liked svg {
   fill: white;
   background-color: #0d6efd;
 }
 
-
 .fade-in-animation {
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+@keyframes fadeInPosts {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-posts {
+  animation-name: fadeInPosts;
+  animation-duration: 0.7s;
 }
