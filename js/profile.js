@@ -1,4 +1,6 @@
-"use strict";
+
+'use strict'
+
 
 const token = getLoginData().token;
 console.log(token);
