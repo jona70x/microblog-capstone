@@ -19,6 +19,10 @@ body {
   height: 5rem;
   width: 5rem !important;
 }
+.img-size-2 {
+  height: 6rem;
+  width: 6rem !important;
+}
 
 @media (min-width: 0) {
   .g-pa-30 {
@@ -130,4 +134,13 @@ body {
 .fade-in-posts {
   animation-name: fadeInPosts;
   animation-duration: 0.7s;
+}
+
+.start-100 {
+  left: 80% !important;
+  top: 10% !important;
+}
+
+.border-success {
+  border-color: #4e54c8 !important;
 }
