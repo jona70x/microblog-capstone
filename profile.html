@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="posts/posts.css" />
 
     <title>Your Profile</title>
 
@@ -35,32 +35,56 @@
   <body>
     <header></header>
 
-    <main>
-      <h1>PROFILE PAGE</h1>
-      <nav>
-        <ul class="nav nav-tabs" >
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Settings</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" onclick="logout()">Log Out</a>
-            </div>
-          </li>
-        </ul>
-        <a href="posts/index.html">Home</a>
-      </nav>
-      
-
-      <input type="text" placeholder="New post" id="postInfo">
-      <button onclick="sendPost()"> Post </button>
-
-      <div id="content"></div>
+    <main class="container d-flex justify-content-center gap-4">
+      <div
+        class="col-3 border rounded-5 align-self-start g-bg-secondary p-3 row flex-column gap-2"
+      >
+        <h4 class="text-center mb-3 text-secondary fw-bold">More pages</h4>
+        <div class="col-12 d-flex rounded-5 border w-50 p-2 icon-box profile">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-person side-icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+              />
+            </svg>
+          </div>
+          <h5 class="my-auto mx-2" onclick="redirectHome()">Home</h5>
+        </div>
+        <div class="col-12 d-flex rounded-5 border w-50 p-2 icon-box logout">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              id="logout"
+              class="side-icon"
+            >
+              <path
+                d="M12.59,13l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H3a1,1,0,0,0,0,2ZM12,2A10,10,0,0,0,3,7.55a1,1,0,0,0,1.8.9A8,8,0,1,1,12,20a7.93,7.93,0,0,1-7.16-4.45,1,1,0,0,0-1.8.9A10,10,0,1,0,12,2Z"
+              ></path>
+            </svg>
+          </div>
+          <h5 class="my-auto mx-2" onclick="logout()">Log out</h5>
+        </div>
+      </div>
+      <div class="row col-6">
+        <section class="row create-post-container"></section>
+        <section class="row posts-container gap-3"></section>
+      </div>
+      <div class="col-3">ASIDE 2</div>
     </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
+    <script src="js/helpers.js"></script>
+    <script src="js/posting-funcs.js"></script>
     <script src="js/profile.js"></script>
   </body>
 </html>

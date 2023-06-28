@@ -1,6 +1,6 @@
 body {
   margin-top: 20px;
-  background: #eaf7f6;
+  background: #d7e6e5;
   color: #20203a;
   font-size: 1.2rem;
 }
@@ -31,7 +31,7 @@ body {
 }
 
 .u-shadow-v18 {
-  box-shadow: 20px 15px 5px #fcad89;
+  box-shadow: 20px 15px 5px #f19d78;
 }
 
 .g-color-gray-dark-v4 {
@@ -51,12 +51,25 @@ body {
   height: 2.3rem;
 }
 
-.svg-container__like:hover {
+.svg-container__like:hover,
+.svg-container__post:hover {
   background-color: #0d6efd;
   cursor: pointer;
 }
 .svg-container__delete:hover {
   background-color: #dc3545;
+  cursor: pointer;
+}
+.svg-container__add:hover {
+  background-color: #6f42c1;
+  cursor: pointer;
+}
+.svg-container__location:hover {
+  background-color: #198754;
+  cursor: pointer;
+}
+.svg-container__reaction:hover {
+  background-color: #ffc107;
   cursor: pointer;
 }
 .svg-container:hover svg {
@@ -80,8 +93,41 @@ body {
   background-color: #dc3545;
 }
 
-.icon-box:hover .side-icon,
-.icon-box:hover h5 {
+.icon-box:hover {
   fill: white;
   color: white;
+}
+
+.liked,
+.liked svg {
+  fill: white;
+  background-color: #0d6efd;
+}
+
+.fade-in-animation {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+@keyframes fadeInPosts {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-posts {
+  animation-name: fadeInPosts;
+  animation-duration: 0.7s;
 }

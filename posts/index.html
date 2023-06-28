@@ -45,7 +45,9 @@
         class="col-3 border rounded-5 align-self-start g-bg-secondary p-3 row flex-column gap-2"
       >
         <h4 class="text-center mb-3 text-secondary fw-bold">More pages</h4>
-        <div class="col-12 d-flex rounded-5 border w-50 p-2 icon-box profile">
+        <div
+          class="col-12 d-flex rounded-5 border w-50 p-2 icon-box profile profile-btn"
+        >
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +82,7 @@
       </div>
 
       <div class="row col-6">
+        <section class="row create-post-container"></section>
         <section class="row posts-container gap-3"></section>
       </div>
 
@@ -89,6 +92,8 @@
     <footer></footer>
 
     <!-- Page-specific code -->
+    <script src="../js/helpers.js"></script>
+    <script src="../js/posting-funcs.js"></script>
     <script src="posts.js"></script>
   </body>
 </html>
