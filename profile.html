@@ -72,22 +72,19 @@
           </div>
           <h5 class="my-auto mx-2" onclick="logout()">Log out</h5>
         </div>
-        <!--move this to on top of all the posts-->
-        <input type="text" placeholder="New post" id="postInfo">
-        <button onclick="sendPost()"> Post </button>
       </div>
       <div class="row col-6">
-
+        <section class="row create-post-container"></section>
         <section class="row posts-container gap-3"></section>
-
       </div>
       <div class="col-3">ASIDE 2</div>
     </main>
 
-
     <footer></footer>
 
     <!-- Page-specific code -->
+    <script src="js/helpers.js"></script>
+    <script src="js/posting-funcs.js"></script>
     <script src="js/profile.js"></script>
   </body>
 </html>
