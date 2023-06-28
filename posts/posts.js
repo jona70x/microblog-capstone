@@ -5,7 +5,9 @@ const postsContainer = document.querySelector(".posts-container");
 const logoutBtn = document.querySelector(".logout-btn");
 const addLikeBtn = document.querySelector(".add-like");
 const loginData = getLoginData();
+const profileButton = document.querySelector(".profile-btn");
 const { username, token } = loginData;
+console.log(username);
 
 const avatarStyles = [
   "big-smile",
@@ -95,24 +97,27 @@ const addLike = async function (postId) {
 };
 
 const deletePost = async (postId) => {
-  const postsContainer = document.querySelector(".posts-container");
   const postToDelete = document.querySelector(`[data-post-id="${postId}"]`);
 
-  const response = await fetch(apiBaseURL + "/api/posts/" + postId, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ postId }),
-  });
+  const confirmation = confirm("Are you sure you want to delete this post? 😿");
 
-  if (response.ok) {
-    postToDelete.classList.add("fade-in-animation");
+  if (confirmation) {
+    const response = await fetch(apiBaseURL + "/api/posts/" + postId, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ postId }),
+    });
 
-    setTimeout(function () {
-      postToDelete.remove();
-    }, 500);
+    if (response.ok) {
+      postToDelete.classList.add("fade-in-animation");
+
+      setTimeout(function () {
+        postToDelete.remove();
+      }, 500);
+    }
   }
 };
 
@@ -121,7 +126,8 @@ const createPostsMarkup = async () => {
 
   for (const post of posts) {
     let likes = post.likes.length;
-    const isLiked = post.likes.find((like) => like.username === username);
+    const isLiked = !!post.likes.find((like) => like.username === username);
+    console.log(isLiked);
 
     const formattedDate = new Date(post.createdAt).toLocaleString("en-US", {
       day: "numeric",
@@ -171,8 +177,8 @@ const createPostsMarkup = async () => {
           post._id
         }" >${likes} People liked this</p>
      
-      <div class='d-flex gap-2'>
-        <div
+      <div class='d-flex gap-1'>
+        <button
           class="svg-container svg-container__like rounded border rounded-circle d-flex align-items-center justify-content-center like-functionality ${
             isLiked ? "liked" : ""
           } "
@@ -193,8 +199,8 @@ const createPostsMarkup = async () => {
               />
             </svg>
           </div>
-        </div>
-        <div
+        </button>
+        <button
           class="svg-container svg-container__delete rounded border rounded-circle d-flex align-items-center justify-content-center delete-functionality"
         >
           <div class='delete-functionality'>
@@ -216,7 +222,7 @@ const createPostsMarkup = async () => {
               />
             </svg>
           </div>
-        </div>
+        </button>
         </div>
       </div>
     </div>
@@ -242,4 +248,10 @@ const createPostsMarkup = async () => {
 };
 
 createPostsMarkup();
-logoutBtn.addEventListener("click", logout);
+logoutBtn.addEventListener("click", () => {
+  alert("You have been logged out");
+  logout();
+});
+profileButton.addEventListener("click", () => {
+  window.location.assign("/profile.html");
+});
