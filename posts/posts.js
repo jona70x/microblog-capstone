@@ -98,7 +98,6 @@ const deletePost = async (postId) => {
   const postsContainer = document.querySelector(".posts-container");
   const postToDelete = document.querySelector(`[data-post-id="${postId}"]`);
 
-  console.log(postsContainer, postToDelete);
   const response = await fetch(apiBaseURL + "/api/posts/" + postId, {
     method: "DELETE",
     headers: {
@@ -108,7 +107,6 @@ const deletePost = async (postId) => {
     body: JSON.stringify({ postId }),
   });
 
-  console.log(response);
   if (response.ok) {
     postToDelete.classList.add("fade-in-animation");
 
@@ -135,14 +133,12 @@ const createPostsMarkup = async () => {
     });
     const avatarUrl = await generateAvatar();
     const generatedPost = document.createElement("div");
+    generatedPost.dataset.postId = post._id;
+    generatedPost.id = "post-box";
 
     generatedPost.innerHTML = `
     <div
-      class="col-12 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4" data-post-id="${
-        post._id
-      }"
-      id='post-box'
-    >
+      class="col-12 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4" >
       <div class="col-12 d-flex mb-3 justify-content-between">
         <div class="d-flex">
           <div>
@@ -238,7 +234,6 @@ const createPostsMarkup = async () => {
       if (targetContainer.classList.contains("delete-functionality")) {
         const postBox = targetContainer.closest("#post-box");
         const postId = postBox.dataset.postId;
-        console.log("deleting");
         deletePost(postId);
       }
     });
