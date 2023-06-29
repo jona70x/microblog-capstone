@@ -120,12 +120,12 @@
             aria-labelledby="userpfp"
             data-popper-placement="top-start"
           >
-            <li class="dropdown-item">Profile</li>
+            <li class="dropdown-item profile-link cursor-pointer">Profile</li>
             <li class="dropdown-item">Settings</li>
             <li>
               <hr class="dropdown-divider" />
             </li>
-            <li class="dropdown-item" onclick="logout()">Log Out</li>
+            <li class="dropdown-item profile-logout">Log Out</li>
           </ul>
         </div>
       </div>
@@ -145,7 +145,8 @@
           <div class="profile-img">
             <a href="#">
               <img
-                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                class="profile-avatar"
+                src=""
                 alt=""
                 title=""
               />
@@ -160,7 +161,6 @@
                 <li><p id="totalLikes"></p></li>
               </ul>
             </div>
-            
           </div>
         </div>
       </div>

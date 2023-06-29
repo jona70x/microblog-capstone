@@ -2,17 +2,10 @@
 
 "use strict";
 const postsContainer = document.querySelector(".posts-container");
-const logoutBtn = document.querySelector(".logout-btn");
 const addLikeBtn = document.querySelector(".add-like");
-const profileButton = document.querySelector(".profile-btn");
 
-// logoutBtn.addEventListener("click", () => {
-//   alert("You have been logged out");
-//   logout();
-// });
-// profileButton.addEventListener("click", () => {
-//   window.location.assign("/profile.html");
-// });
+const userNameSearch = document.querySelector("#username_search");
+
 
 window.addEventListener("load", async () => {
   const posts = await getPosts();
@@ -20,3 +13,17 @@ window.addEventListener("load", async () => {
 });
 
 console.log(window.location.pathname);
+console.log(userNameSearch);
+
+
+userNameSearch.addEventListener("keyup", async (e) => {
+  
+  if (e.keyCode === 13) {
+    postsContainer.innerHTML = "";
+    const posts = await getPosts();
+    const filteredArray = posts.filter((post) =>
+      post.username.includes(userNameSearch.value)
+    );
+    createPostsMarkup(filteredArray);
+  }
+});
