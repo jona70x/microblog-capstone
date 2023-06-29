@@ -133,7 +133,7 @@ body {
 
 .fade-in-posts {
   animation-name: fadeInPosts;
-  animation-duration: 0.7s;
+  animation-duration: 0.3s;
 }
 
 .start-100 {
