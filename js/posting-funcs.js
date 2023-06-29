@@ -28,6 +28,7 @@ const sendPost = async (inputElement) => {
 
 const createPostsMarkup = async (postsArray) => {
   postsContainer.innerHTML = "";
+  console.log(postsArray);
   for (const post of postsArray) {
     let likes = post.likes.length;
     const isLiked = !!post.likes.find((like) => like.username === username);
@@ -76,9 +77,11 @@ const createPostsMarkup = async (postsArray) => {
 
       <div class="d-flex my-0 justify-content-between">
       
-        <p class='text-muted' onmousehover="showWhoLiked(${post._id})" id='likes-container' data-post-id-likes="${
+        <p class='text-muted' onmousehover="showWhoLiked(${
           post._id
-        }" >${likes} People liked this</p>
+        })" id='likes-container' data-post-id-likes="${
+      post._id
+    }" >${likes} People liked this</p>
      
       <div class='d-flex gap-1'>
         <button
@@ -323,8 +326,11 @@ async function generatePostForm(formContainer) {
           alert("Your dump is too short 😿 10 characters minimum");
         } else {
           const responseInfo = await sendPost(postTextarea);
-          if (responseInfo.ok && window.location.pathname === "/posts/index.html") {
-            postsContainer.innerHTML = ''
+          if (
+            responseInfo.ok &&
+            window.location.pathname === "/posts/index.html"
+          ) {
+            postsContainer.innerHTML = "";
             const posts = await getPosts();
             if (posts) {
               createPostsMarkup(posts);
@@ -333,6 +339,7 @@ async function generatePostForm(formContainer) {
             responseInfo.ok &&
             window.location.pathname === "/profile.html"
           ) {
+            postsContainer.innerHTML = "";
             const posts = await displayMyPosts();
             if (posts) {
               createPostsMarkup(posts);

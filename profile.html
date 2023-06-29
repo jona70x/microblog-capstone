@@ -30,7 +30,7 @@
       if (isLoggedIn() === false) window.location.replace("/signin.html");
     </script>
 
-    <title>Login to the Microblog Network!</title>
+    <title>Profile Page</title>
   </head>
   <body class="container-fluid p-0 m-0">
     <!-- <script>
@@ -120,7 +120,7 @@
             aria-labelledby="userpfp"
             data-popper-placement="top-start"
           >
-          <li class="dropdown-item profile-link cursor-pointer">Profile</li>
+            <li class="dropdown-item profile-link cursor-pointer">Profile</li>
             <li class="dropdown-item">Settings</li>
             <li>
               <hr class="dropdown-divider" />
@@ -137,7 +137,7 @@
         <div class="fb-profile-block">
           <div class="fb-profile-block-thumb cover-container">
             <img
-              src="assests/images/pfpbg.jpg"
+              src="assests/images/profilebg.png"
               alt="profile header photo"
               class="headerimg"
             />
@@ -145,7 +145,8 @@
           <div class="profile-img">
             <a href="#">
               <img
-                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                class="profile-avatar"
+                src=""
                 alt=""
                 title=""
               />
@@ -160,7 +161,6 @@
                 <li><p id="totalLikes"></p></li>
               </ul>
             </div>
-            
           </div>
         </div>
       </div>

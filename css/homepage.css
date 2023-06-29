@@ -1,3 +1,47 @@
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+    top: 90%;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: #3f4774;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s;
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s;
+}
+
 #text {
 	display: inline-block;
 	vertical-align: middle;
@@ -25,7 +69,7 @@
 
 .kitty {
   position: relative;
-  left: 200px;
+  left: 190px;
   /* left: 200px;
   top: 800px; */
 }
@@ -270,4 +314,10 @@
   top: -40px;
   left: 50px;
   z-index: 1;
+}
+
+.signUp:hover {
+    box-shadow: 10px 10px 0px #5eb1bf;
+    top: 5px;
+    left: -5px;
 }

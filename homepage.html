@@ -24,7 +24,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="css/homepage.css" />
 
-    <title>Login to the Microblog Network!</title>
+    <title>Homepage</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="js/auth.js"></script>
@@ -40,7 +40,7 @@
           <div class="d-flex flex-column bg-light justify-content-between" style="width: 5rem; height: 100vh">
             <div>
               <a href="homepage.html"class="d-block p-2 mt-3 link-dark text-decoration-none">
-                <img src="/assests/images/logo1.png" style="height: 65px" />
+                <img src="/assests/images/logo.png" style="height: 65px" />
               </a>
             </div>
             <div class="dropdown border-top">
@@ -66,15 +66,33 @@
                 <img src="/assests/images/litterblog.gif" style="width: 500px;">
         </div>
 
+        <div>
+        <svg class="arrows">
+            <path class="a1" d="M0 0 L30 32 L60 0"></path>
+            <path class="a2" d="M0 20 L30 52 L60 20"></path>
+        </svg>
+        </div>
 
-        <div class="container d-flex justify-content-center p-5 my-5 text-emphasis-primary" style="background-color: #3f4774;">
-            <h2 class="m-5 text-center text-light" style="font-size: 70px;">Posting Made <i>Easy</i></h2>
-            <div>
-            <h4 class="text-left text-light m-5">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae illum adipisci nobis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam possimus unde eius aspernatur repudiandae error. Non sunt harum assumenda iste. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quaerat in voluptates maxime quod iusto quo natus et placeat. Dolore. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ullam? Lorem15</h4>
+        <div class="row" style="margin-top: 120px; margin-bottom: 120px; padding-top: 100px;">
+            <div class="col">
+                <img src="/assests/images/nyah.gif" style="width: 400px; position: relative; left: 37%">
+            </div>
+            <div class="col">
+                <h1 style="font-size: 60px">The <i>purrrfect</i> place to dump your thoughts</h1>
+                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, est.</p>
             </div>
         </div>
 
+        <div class="row" style="margin-top: 120px; margin-bottom: 120px; padding-top: 100px; padding-bottom: 100px; background-color: #3f4774;">
+            <div class="col">
+                <h2 class="text-center text-light" style="font-size: 80px;">Posting<br> Made <br><i>Easy</i></h2>
+            </div>
+            <div class="col-7">
+                <h4 class="text-left text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem vitae voluptates adipisci perspiciatis nam dolores. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, dignissimos. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae illum adipisci nobis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam possimus unde eius aspernatur repudiandae error. Non sunt harum assumenda iste. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quaerat in voluptates maxime quod iusto quo natus et placeat. Dolore. Lorem ipsum dolor sit amet consectetur adipisicing. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ullam? Lorem15</h4>
+            </div>
+        </div>
 
+        <div class="container-fluid" style="margin-top: 120px; margin-bottom: 170px; padding-top: 100px; padding-bottom: 100px;">
         <div class="row">
             <div class="col">
                 <div class="container">
@@ -103,18 +121,26 @@
                 </body>
               </html>
             </div>
-            <div class="col-9 d-flex justify-content-center mt-5 mb-5">
+            <div class="col-9 d-flex justify-content-center">
                 <div id="container">
-                    <h1 style="font-size: 60px">Share your...</h1>
-                    <h1><div id="text" style="font-size: 70px" class="mb-4"></div><div id="cursor"></div></h1>
+                    <h1 style="font-size: 80px">Share your...</h1>
+                    <h1><div id="text" style="font-size: 100px" class="mb-4"></div><div id="cursor"></div></h1>
                 </div>
             </div>
         </div>
-
-        <div class="col d-flex justify-content-center" style="margin-top: 100px;">
-            <h1 style="font-size: 60px">Join millions of others</h1>
         </div>
 
+        
+        <div class="col d-flex justify-content-center" style="margin-top: 150px; padding-top: 100px; background-color: #ef7b45;">
+            <h1 class="mt-5 text-light" style="font-size: 85px">Join millions of others</h1>
+        </div>
+        <div class="col d-flex justify-content-center" style="background-color: #ef7b45;">
+            <h3 class="mt-5 mb-5 text-light" style="font-size: 40px">Become a part of the community!</h3>
+        </div>
+        <div class="col d-flex justify-content-center" style="padding-bottom: 100px; background-color: #ef7b45;">
+            <button class="btn btn-light signUp " style="font-size: 30px;"><a href="signup.html" class="text-decoration-none" style="color: #5eb1bf;"><b>Sign Up</b></a></button>
+        </div>
+        
 
 
     </main>

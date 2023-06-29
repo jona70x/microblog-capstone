@@ -116,7 +116,6 @@ const deletePost = async (postId) => {
       }, 500);
     }
   }
-  window.location.reload();
 };
 
 // Get all posts
