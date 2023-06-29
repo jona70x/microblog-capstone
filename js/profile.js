@@ -97,11 +97,10 @@ const showWhoLiked = async function (postId) {
     else likedByString += likedBy[i];
   }
   likedPost;
-  likedByString;
-
-  likesContainer += `<div class="hide">Liked by ${likedByString}</div>`;
-};
-showWhoLiked("649cf2fff9ba080f14e2683c");
+  likesContainer += `<div class="hide">Liked by ${likedByString}</div>`
+  console.log (`Liked by ${likedByString}`);
+}
+showWhoLiked("649dca3f486e0e04ad17a1b8");
 
 postArray;
 
@@ -109,7 +108,3 @@ window.addEventListener("load", async () => {
   const avatar = await generateAvatar(username);
   profileAvatar.src = avatar;
 });
-
-// display liked by
-// user info
-//posts ive liked
