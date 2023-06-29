@@ -144,3 +144,15 @@ body {
 .border-success {
   border-color: #4e54c8 !important;
 }
+
+.search-friends,
+.search-explore {
+  cursor: pointer;
+}
+.search-friends:hover,
+.search-explore:hover {
+  cursor: pointer;
+  color: #f19d78;
+  text-decoration: underline 2px #f19d78;
+  text-underline-offset: 4px;
+}

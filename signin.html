@@ -44,9 +44,14 @@
   <body>
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="js/auth.js"></script>
-    <!-- <script>
-      if (isLoggedIn() === true) window.location.replace("/posts");
-    </script> -->
+    <script>
+     
+      if (isLoggedIn() === true){
+        alert('Meow! You are already logged in😼 Go and check the posts')
+         window.location.replace("/posts/index.html")}
+
+    
+    </script>
     <header>
 
     </header>

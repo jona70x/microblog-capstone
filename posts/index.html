@@ -36,7 +36,9 @@
 
     <script src="../js/auth.js"></script>
     <script>
-      if (isLoggedIn() === false) window.location.replace("/signin.html");
+      if (isLoggedIn() === false) {
+        alert('You are a silly cat😾 Log in first to access this page')
+        window.location.replace("/signin.html")};
     </script>
   </head>
 
@@ -57,7 +59,7 @@
             <li>
               <a
                 class="nav-item nav-link link-dark mt-2 text-decoration-none"
-                href="/posts/index.html"
+                href="/homepage.html"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +139,20 @@
       class="row d-flex justify-content-center mx-0 p-0 justify-content-center"
     >
       <div class="row col-8 my-5 justify-content-center">
+        <section class="col-11 mb-5 d-flex gap-4 align-items-center">
+          <h6 class="mb-0 fs-5 search-friends">Friends</h6>
+          <h6 class="mb-0 fs-5 search-explore">Explore</h6>
+          <select
+            name="sort-posts"
+            id="sort-posts"
+            class="rounded rounded-2 p-2"
+            style="width: 12rem; font-size: medium"
+          >
+            <option value="" selected disabled>Sort by...</option>
+            <option value="latest">Latest posts</option>
+            <option value="oldest">Oldest posts</option>
+          </select>
+        </section>
         <section
           class="row create-post-container justify-content-center"
         ></section>

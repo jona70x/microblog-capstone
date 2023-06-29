@@ -1,7 +1,7 @@
 "use strict";
 
 let postsContainer = document.querySelector(".posts-container");
-const profileAvatar = document.querySelector(".profile-avatar")
+const profileAvatar = document.querySelector(".profile-avatar");
 
 window.addEventListener("load", async () => {
   const posts = await displayMyPosts();
@@ -20,22 +20,22 @@ function redirectHome() {
 // functions for profile header section
 
 let profileName = document.querySelector(".profile-name");
-function displayUsername(){
+function displayUsername() {
   profileName.innerHTML = `<h2>${username}</h2>`;
 }
 
-function showPostsCount(){
+function showPostsCount() {
   let postCountLi = document.getElementById("postCount");
   postCountLi.innerHTML = `${postsCount} posts`;
 }
 
-function showTotalLikes(){
+function showTotalLikes() {
   let likesLi = document.getElementById("totalLikes");
   let likes = 0;
-  for (let i = 0; i < postArray.length; i ++){
+  for (let i = 0; i < postArray.length; i++) {
     likes += postArray[i].likes.length;
   }
-  likesLi.innerHTML = `${likes} likes`
+  likesLi.innerHTML = `${likes} likes`;
 }
 
 //functions for profile user info/bio section
@@ -87,24 +87,23 @@ const showWhoLiked = async function(postId){
   const likedPost = posts.find((post) => post._id === postId);
   let likedBy = [];
   let likesInPost = likedPost.likes;
-  for (let i = 0; i < likesInPost.length; i ++){
+  for (let i = 0; i < likesInPost.length; i++) {
     likedBy.push(likesInPost[i].username);
   }
-  let likedByString="";
-  for (let i = 0; i < likedBy.length; i ++){
+  let likedByString = "";
+  for (let i = 0; i < likedBy.length; i++) {
     if (i != likedBy.length - 1)
       likedByString = likedByString + likedBy[i] + ", ";
-    else
-    likedByString += likedBy[i];
+    else likedByString += likedBy[i];
   }
-  console.log(likedPost);
-  console.log(likedByString);
+  likedPost;
+  likedByString;
 
-  likesContainer += `<div class="hide">Liked by ${likedByString}</div>`
-}
+  likesContainer += `<div class="hide">Liked by ${likedByString}</div>`;
+};
 showWhoLiked("649cf2fff9ba080f14e2683c");
 
-console.log(postArray);
+postArray;
 
 window.addEventListener('load', async () => {
   const avatar = await generateAvatar(username)

@@ -28,93 +28,127 @@
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="js/auth.js"></script>
-    <!-- <script>
-      if (isLoggedIn() === true) window.location.replace("/posts");
-    </script> -->
+    <script>
+      if (isLoggedIn() === true) {
+        alert("Meow! You are already logged in😼 Go and check the posts");
+        window.location.replace("/posts/index.html");
+      }
+    </script>
 
     <!-- Background animation -->
-    <div class="area" >
+    <div class="area">
       <ul class="circles">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
-    </div >
-
+    </div>
   </head>
   <body>
-    <header>
-    </header>
+    <header></header>
 
     <main>
-
       <div class="container d-flex justify-content-center">
-        <div class="card mb-3 shadow-lg" style="width: 750px;">
+        <div class="card mb-3 shadow-lg" style="width: 750px">
           <div class="row g-0">
             <div class="col">
-              <img src="/assests/images/leaveyourprint.png" class="img-fluid rounded-start" alt="...">
+              <img
+                src="/assests/images/leaveyourprint.png"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
             </div>
             <div class="col-5">
-              <div class="card-title mt-3" style="text-align: center;">
+              <div class="card-title mt-3" style="text-align: center">
                 <h1>Register</h1>
               </div>
               <div class="card-body mt-4">
                 <form class="needs-validation">
-                <div>
-                  <label for="fullname" class="form-label">Full Name</label>
-                  <input type="text" class="form-control" id="fullname" required>
-                  <div class="invalid-feedback">
-                    Please put your full name.
+                  <div>
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fullname"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please put your full name.
+                    </div>
                   </div>
-                </div>
-                
-                <div>
-                  <label for="username" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="username" minlength="3" required>
-                  <div class="invalid-feedback">
-                    Please choose a username.
-                  </div>
-                </div>
 
-                <div>
-                  <label for="password" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="password" minlength="6" required>
-                  <div class="invalid-feedback">
-                    Please choose a password.
+                  <div>
+                    <label for="username" class="form-label">Username</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      minlength="3"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please choose a username.
+                    </div>
                   </div>
-                </div>
 
-                <div class="text-center mt-4">
-                <button class="btn btn-light" onclick="createNewUser()">Sign Up</button>
-                <p class="card-text mt-2">
-                  <small class="text-body-secondary">Already a member? <a href="signin.html" class="text-dark">Log In</a></small>
-                </p>
-                </div>
+                  <div>
+                    <label for="password" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      minlength="6"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please choose a password.
+                    </div>
+                  </div>
+
+                  <div class="text-center mt-4">
+                    <button class="btn btn-light" onclick="createNewUser()">
+                      Sign Up
+                    </button>
+                    <p class="card-text mt-2">
+                      <small class="text-body-secondary"
+                        >Already a member?
+                        <a href="signin.html" class="text-dark"
+                          >Log In</a
+                        ></small
+                      >
+                    </p>
+                  </div>
                 </form>
 
                 <div class="row">
                   <div class="col">
-                  <a href="homepage.html"><img src="assests/images/peek.png" id="peek" style="width:70px; position: relative; top: 30%;"></a>
+                    <a href="homepage.html"
+                      ><img
+                        src="assests/images/peek.png"
+                        id="peek"
+                        style="width: 70px; position: relative; top: 30%"
+                    /></a>
                   </div>
                   <div class="col-8">
-                  <small class="text-body-secondary" style="position: relative; top: 30%; right: 12%;">Pssst! Click the kitty to find your way back home.</small>
+                    <small
+                      class="text-body-secondary"
+                      style="position: relative; top: 30%; right: 12%"
+                      >Pssst! Click the kitty to find your way back home.</small
+                    >
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-
     </main>
 
     <footer></footer>
