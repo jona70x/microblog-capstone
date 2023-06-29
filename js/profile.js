@@ -60,4 +60,6 @@ showWhoLiked("649cf2fff9ba080f14e2683c");
 
 console.log(postArray);
 
-//consistent profile pictures
+// profile pictures
+// display liked by
+// fix posts count
