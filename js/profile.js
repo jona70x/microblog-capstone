@@ -1,6 +1,7 @@
 "use strict";
 
 let postsContainer = document.querySelector(".posts-container");
+const profileAvatar = document.querySelector(".profile-avatar")
 
 window.addEventListener("load", async () => {
   const posts = await displayMyPosts();
@@ -61,3 +62,7 @@ showWhoLiked("649cf2fff9ba080f14e2683c");
 console.log(postArray);
 
 //consistent profile pictures
+window.addEventListener('load', async () => {
+  const avatar = await generateAvatar(username)
+  profileAvatar.src = avatar
+})
