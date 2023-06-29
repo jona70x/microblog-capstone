@@ -3,6 +3,9 @@
 // This file  contains the helpers functions to generate avatars, posts, and the functionality that posts and profile sharte.  It will make it available for everyone to use.
 let { token, username } = getLoginData();
 
+const profileLink = document.querySelector(".profile-link");
+const logoutLink = document.querySelector(".profile-logout");
+
 const avatarStyles = [
   "big-smile",
   "bottts",
@@ -26,13 +29,24 @@ const getRandomElement = (queryArr) => {
   return queryArr[randomIndex];
 };
 
-const generateAvatar = async () => {
+const generateAvatar = async (postUsername) => {
+  if (postUsername === "sammich")
+    return "https://api.dicebear.com/6.x/big-smile/svg?seed=Annie&backgroundColor=4e54c8";
+
+  if (postUsername === "swii")
+    return "https://api.dicebear.com/6.x/adventurer/svg?seed=Mimi&backgroundColor=4e54c8&flip=true";
+
+  if (postUsername === "jona70x")
+    return "https://api.dicebear.com/6.x/notionists/svg?seed=Pumpkin&backgroundColor=4e54c8";
+
   const response = await fetch(
     `https://api.dicebear.com/6.x/${getRandomElement(
       avatarStyles
     )}/svg?seed=${getRandomElement(seedStyles)}`
   );
+
   const { url } = response;
+
   return url;
 };
 
@@ -139,3 +153,11 @@ const displayMyPosts = async () => {
   }
   return postArray;
 };
+
+logoutLink.addEventListener("click", () => {
+  alert("You have been logged out");
+  logout();
+});
+profileLink.addEventListener("click", () => {
+  window.location.assign("/profile.html");
+});

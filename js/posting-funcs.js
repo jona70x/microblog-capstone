@@ -16,7 +16,9 @@ const sendPost = async (inputElement) => {
     }
   );
   const responseInfo = await response.json();
-  inputElement.value = "";
+  if (response.ok) {
+    inputElement.value = "";
+  }
   return response;
 };
 
@@ -25,9 +27,8 @@ const sendPost = async (inputElement) => {
 // Generate posts
 
 const createPostsMarkup = async (postsArray) => {
-  const posts = await postsArray;
-
-  for (const post of posts) {
+  postsContainer.innerHTML = "";
+  for (const post of postsArray) {
     let likes = post.likes.length;
     const isLiked = !!post.likes.find((like) => like.username === username);
 
@@ -39,7 +40,7 @@ const createPostsMarkup = async (postsArray) => {
       minute: "numeric",
       second: "numeric",
     });
-    const avatarUrl = await generateAvatar();
+    const avatarUrl = await generateAvatar(post.username);
     const generatedPost = document.createElement("div");
     generatedPost.dataset.postId = post._id;
     generatedPost.id = "post-box";
@@ -145,6 +146,7 @@ const createPostsMarkup = async (postsArray) => {
         deletePost(postId);
       }
     });
+
     postsContainer.appendChild(generatedPost);
   }
 };
@@ -152,7 +154,8 @@ const createPostsMarkup = async (postsArray) => {
 ///////
 /// form to create a post
 
-function generatePostForm(formContainer) {
+async function generatePostForm(formContainer) {
+  const avatar = await generateAvatar(username);
   const postForm = `<form class="mb-4 post-form">
   <div
     class="col-10 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4"
@@ -162,7 +165,7 @@ function generatePostForm(formContainer) {
         <div>
           <img
             class="img-size border border-2 rounded-circle g-mt-3 g-mr-15"
-            src="https://api.dicebear.com/6.x/lorelei/svg"
+            src=${avatar}
             alt="Avatar"
           />
         </div>
@@ -320,8 +323,8 @@ function generatePostForm(formContainer) {
           alert("Your dump is too short 😿 10 characters minimum");
         } else {
           const responseInfo = await sendPost(postTextarea);
-          console.log(responseInfo);
-          if (responseInfo.ok && window.location.pathname === "/posts/") {
+          if (responseInfo.ok && window.location.pathname === "/posts/index.html") {
+            postsContainer.innerHTML = ''
             const posts = await getPosts();
             if (posts) {
               createPostsMarkup(posts);
@@ -366,3 +369,15 @@ function generatePostForm(formContainer) {
 }
 
 generatePostForm(postFormContainer);
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function example() {
+  console.log("Before delay");
+
+  await delay(2000); // Delay of 2000 milliseconds (2 seconds)
+
+  console.log("After delay");
+}
