@@ -1,6 +1,6 @@
 body {
   margin-top: 20px;
-  background: #d7e6e5;
+  background: #eaf7f6;
   color: #20203a;
   font-size: 1.2rem;
 }
@@ -19,6 +19,10 @@ body {
   height: 5rem;
   width: 5rem !important;
 }
+.img-size-2 {
+  height: 6rem;
+  width: 6rem !important;
+}
 
 @media (min-width: 0) {
   .g-pa-30 {
@@ -31,7 +35,7 @@ body {
 }
 
 .u-shadow-v18 {
-  box-shadow: 20px 15px 5px #f19d78;
+  box-shadow: 20px 15px 5px #fcad89;
 }
 
 .g-color-gray-dark-v4 {
@@ -130,4 +134,13 @@ body {
 .fade-in-posts {
   animation-name: fadeInPosts;
   animation-duration: 0.7s;
+}
+
+.start-100 {
+  left: 80% !important;
+  top: 10% !important;
+}
+
+.border-success {
+  border-color: #4e54c8 !important;
 }

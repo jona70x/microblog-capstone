@@ -47,7 +47,7 @@ const createPostsMarkup = async (postsArray) => {
 
     generatedPost.innerHTML = `
     <div
-      class="col-12 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4 fade-in-posts" >
+      class="col-10 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4 fade-in-posts justify-content-center" >
       <div class="col-12 d-flex mb-3 justify-content-between">
         <div class="d-flex">
           <div>
@@ -156,7 +156,7 @@ const createPostsMarkup = async (postsArray) => {
 function generatePostForm(formContainer) {
   const postForm = `<form class="mb-4 post-form">
   <div
-    class="col-12 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4"
+    class="col-10 media-body u-shadow-v18 g-bg-secondary g-pa-30 border rounded-5 row d-flex flex-column mx-4 mb-4"
   >
     <div class="col-12 d-flex mb-3 justify-content-between p-0">
       <div class="d-flex">

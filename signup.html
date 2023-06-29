@@ -66,28 +66,38 @@
                 <h1>Register</h1>
               </div>
               <div class="card-body mt-4">
-
+                <form class="needs-validation">
                 <div>
                   <label for="fullname" class="form-label">Full Name</label>
                   <input type="text" class="form-control" id="fullname" required>
+                  <div class="invalid-feedback">
+                    Please put your full name.
+                  </div>
                 </div>
                 
                 <div>
                   <label for="username" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="username" required>
+                  <input type="text" class="form-control" id="username" minlength="3" required>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
                 </div>
 
                 <div>
                   <label for="password" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="password" required>
+                  <input type="password" class="form-control" id="password" minlength="6" required>
+                  <div class="invalid-feedback">
+                    Please choose a password.
+                  </div>
                 </div>
 
                 <div class="text-center mt-4">
                 <button class="btn btn-light" onclick="createNewUser()">Sign Up</button>
                 <p class="card-text mt-2">
-                  <small class="text-body-secondary">Already a member? <a href="signin.html">Log In</a></small>
+                  <small class="text-body-secondary">Already a member? <a href="signin.html" class="text-dark">Log In</a></small>
                 </p>
                 </div>
+                </form>
 
               </div>
             </div>
