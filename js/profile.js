@@ -47,5 +47,3 @@ function redirectHome() {
   
   //reload
   //logout/home buttons
-=========
->>>>>>>>> Temporary merge branch 2
