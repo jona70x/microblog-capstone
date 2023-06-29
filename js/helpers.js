@@ -38,6 +38,8 @@ const generateAvatar = async (postUsername) => {
 
   if (postUsername === "jona70x")
     return "https://api.dicebear.com/6.x/notionists/svg?seed=Pumpkin&backgroundColor=4e54c8";
+  if (postUsername === "butterfingers")
+    return "https://api.dicebear.com/6.x/micah/svg?seed=Lilly&facialHairColor[]&hairColor=000000&backgroundColor=4e54c8";
 
   const response = await fetch(
     `https://api.dicebear.com/6.x/${getRandomElement(
