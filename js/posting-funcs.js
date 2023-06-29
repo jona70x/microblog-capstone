@@ -381,9 +381,9 @@ function delay(ms) {
 }
 
 async function example() {
-  console.log("Before delay");
+  ("Before delay");
 
   await delay(2000); // Delay of 2000 milliseconds (2 seconds)
 
-  console.log("After delay");
+  ("After delay");
 }

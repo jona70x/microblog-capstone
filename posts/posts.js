@@ -12,8 +12,8 @@ window.addEventListener("load", async () => {
   createPostsMarkup(posts);
 });
 
-console.log(window.location.pathname);
-console.log(userNameSearch);
+window.location.pathname;
+userNameSearch;
 
 userNameSearch.addEventListener("keyup", async (e) => {
   if (e.keyCode === 13) {
