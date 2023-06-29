@@ -76,7 +76,7 @@ const createPostsMarkup = async (postsArray) => {
 
       <div class="d-flex my-0 justify-content-between">
       
-        <p class='text-muted' id='likes-container' data-post-id-likes="${
+        <p class='text-muted' onmousehover="showWhoLiked(${post._id})" id='likes-container' data-post-id-likes="${
           post._id
         }" >${likes} People liked this</p>
      

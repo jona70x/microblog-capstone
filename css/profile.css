@@ -109,3 +109,10 @@
     top: 330px;
   }
   
+  .hide:hover {
+    display: block;
+  }
+
+  .hide{
+    display: none;
+  }
