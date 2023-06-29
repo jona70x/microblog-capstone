@@ -325,8 +325,9 @@ async function generatePostForm(formContainer) {
         } else {
           const responseInfo = await sendPost(postTextarea);
           if (
-            responseInfo.ok &&
-            window.location.pathname === "/posts/index.html"
+            (responseInfo.ok &&
+              window.location.pathname === "/posts/index.html") ||
+            (responseInfo.ok && window.location.pathname === "/posts/")
           ) {
             postsContainer.innerHTML = "";
             const posts = await getPosts();
