@@ -364,11 +364,21 @@ async function generatePostForm(formContainer) {
       }
       if (target.classList.contains("geoposition-functionality")) {
         const geoposition = navigator.geolocation;
-        geoposition.getCurrentPosition((geolocation) => {
+        geoposition.getCurrentPosition(async (geolocation) => {
           const crd = geolocation.coords;
           const { latitude, longitude } = crd;
+
+          const geocodeUrl = `https://geocode.xyz/${latitude},${longitude}?json=1`;
+
+          const response = await fetch(geocodeUrl);
+          const data = await response.json();
+
+          const {city, state} = data
+          
+          console.log("Your city:", city);
+
           alert(
-            `We just smelled your location. Latitude: ${latitude}, longitude: ${longitude} 😼`
+            `We just smelled your location. You live in ${city}, ${state} 😼`
           );
         });
       }
