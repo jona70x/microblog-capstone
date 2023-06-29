@@ -37,28 +37,27 @@ function showTotalLikes(){
 
 const showWhoLiked = async function(postId){
   const posts = await getPosts();
-  let likeDiv = document.getElementById("likes-container");
+  let likesContainer = document.getElementById("likes-container");
   const likedPost = posts.find((post) => post._id === postId);
   let likedBy = [];
   let likesInPost = likedPost.likes;
   for (let i = 0; i < likesInPost.length; i ++){
     likedBy.push(likesInPost[i].username);
   }
-  let string="";
+  let likedByString="";
   for (let i = 0; i < likedBy.length; i ++){
     if (i != likedBy.length - 1)
-      string = string + likedBy[i] + ", ";
+      likedByString = likedByString + likedBy[i] + ", ";
     else
-    string += likedBy[i];
+    likedByString += likedBy[i];
   }
   console.log(likedPost);
-  console.log(string);
+  console.log(likedByString);
 
-  //change the title of the likeDiv so that it displays who liked it when it hovers???
-  // `<p title="Liked by ${likedBy}" / make it into a string???
+  likesContainer += `<div class="hide">Liked by ${likedByString}</div>`
 }
 showWhoLiked("649cf2fff9ba080f14e2683c");
 
 console.log(postArray);
 
-  //consistent profile pictures
+//consistent profile pictures
