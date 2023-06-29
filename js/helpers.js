@@ -102,6 +102,7 @@ const deletePost = async (postId) => {
       }, 500);
     }
   }
+  window.location.reload();
 };
 
 // Get all posts
@@ -118,6 +119,8 @@ const getPosts = async () => {
 };
 
 // Sammi's function
+var postsCount = 0;
+let postArray = []; // array of user's posts
 const displayMyPosts = async () => {
   const response = await fetch(
     "https://microbloglite.herokuapp.com/api/posts?limit=500",
@@ -129,13 +132,12 @@ const displayMyPosts = async () => {
   const data = await response.json();
   // console.log(data);
   const username = getLoginData().username;
-  let postArray = [];
-  for (let i = 0; i < data.length; i++) {
+  for (let i = data.length - 1; i > 0; i--) {
     if (data[i].username === username) {
-      // divContent.innerHTML += `@${data[i].username}, ${data[i].createdAt}, ${data[i].text} <br>`;
       postArray.push(data[i]);
-      console.log(data[i]);
+      postsCount++; 
     }
   }
+  postsCount = postArray.length;
   return postArray;
 };
