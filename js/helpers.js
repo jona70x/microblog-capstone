@@ -155,7 +155,7 @@ const displayMyPosts = async () => {
     }
   }
   postArray = myPostArray;
-  postsCount = myPostArray.length;
+  postsCount = postArray.length;
   return myPostArray;
 };
 
