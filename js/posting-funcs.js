@@ -373,9 +373,7 @@ async function generatePostForm(formContainer) {
           const response = await fetch(geocodeUrl);
           const data = await response.json();
 
-          const {city, state} = data
-          
-          console.log("Your city:", city);
+          const { city, state } = data;
 
           alert(
             `We just smelled your location. You live in ${city}, ${state} 😼`
