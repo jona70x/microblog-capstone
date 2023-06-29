@@ -134,8 +134,11 @@ const getPosts = async () => {
 
 // Sammi's function
 var postsCount = 0;
-let postArray = []; // array of user's posts
+let postArray = []; // array of user's postsﬁ
 const displayMyPosts = async () => {
+  const myPostArray = [];
+  postsContainer.innerHTML = "";
+
   const response = await fetch(
     "https://microbloglite.herokuapp.com/api/posts?limit=500",
     {
@@ -148,12 +151,13 @@ const displayMyPosts = async () => {
   const username = getLoginData().username;
   for (let i = data.length - 1; i > 0; i--) {
     if (data[i].username === username) {
-      postArray.push(data[i]);
-      postsCount++; 
+      myPostArray.push(data[i]);
+      postsCount++;
     }
   }
-  postsCount = postArray.length;
-  return postArray;
+  postArray = myPostArray;
+  postsCount = myPostArray.length;
+  return myPostArray;
 };
 
 logoutLink.addEventListener("click", () => {
