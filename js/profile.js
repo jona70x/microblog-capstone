@@ -1,6 +1,7 @@
 "use strict";
 
 let postsContainer = document.querySelector(".posts-container");
+<<<<<<<<< Temporary merge branch 1
 const newPost = document.getElementById("postInfo");
 
 const sendPost = async () => {
@@ -33,12 +34,17 @@ const displayMyPosts = async () => {
     }
     return postArray;
 }
+=========
+>>>>>>>>> Temporary merge branch 2
 
 // displayMyPosts();
 
 window.addEventListener("load", async () => {
   const posts = await displayMyPosts();
   createPostsMarkup(posts);
+  displayUsername();
+  showPostsCount();
+  showTotalLikes();
 });
 
 function redirectHome() {
@@ -47,3 +53,10 @@ function redirectHome() {
   
   //reload
   //logout/home buttons
+=========
+
+//reload
+//logout/home buttons
+>>>>>>>>> Temporary merge branch 2
+
+  //consistent profile pictures

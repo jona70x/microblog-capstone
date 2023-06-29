@@ -17,6 +17,7 @@ const sendPost = async (inputElement) => {
   );
   const responseInfo = await response.json();
   inputElement.value = "";
+  window.location.reload();
   return response;
 };
 

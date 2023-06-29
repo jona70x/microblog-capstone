@@ -23,66 +23,162 @@
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="posts/posts.css" />
+    <link rel="stylesheet" href="css/profile.css" />
 
-    <title>Your Profile</title>
-
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="js/auth.js"></script>
     <script>
       if (isLoggedIn() === false) window.location.replace("/signin.html");
     </script>
-  </head>
-  <body>
-    <header></header>
 
-    <main class="container d-flex justify-content-center gap-4">
+    <title>Login to the Microblog Network!</title>
+  </head>
+  <body class="container-fluid p-0 m-0">
+    <!-- <script>
+      if (isLoggedIn() === true) window.location.replace("/posts");
+    </script> -->
+
+    <!-- side nav bar -->
+    <header class="m-0 float-start top-0 start-0 p-0 sticky-top shadow">
       <div
-        class="col-3 border rounded-5 align-self-start g-bg-secondary p-3 row flex-column gap-2"
+        class="d-flex flex-column bg-light justify-content-between"
+        style="width: 5rem; height: 100vh"
       >
-        <h4 class="text-center mb-3 text-secondary fw-bold">More pages</h4>
-        <div class="col-12 d-flex rounded-5 border w-50 p-2 icon-box profile">
-          <div>
+        <div>
+          <a
+            href="/posts/index.html"
+            class="d-block p-2 mt-3 link-dark text-decoration-none"
+          >
+            <img src="/assests/images/logo.png" style="height: 65px" />
+          </a>
+          <ul class="nav nav-pills nav-flush flex-column text-center">
+            <li>
+              <a
+                class="nav-item nav-link link-dark mt-2 text-decoration-none"
+                href="/posts/index.html"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="37"
+                  fill="currentColor"
+                  class="bi bi-house"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-item nav-link link-dark mt-2 text-decoration-none"
+                href="/posts/index.html"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="33"
+                  fill="currentColor"
+                  class="bi bi-pencil-square"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown border-top">
+          <a
+            href="profile.html"
+            class="d-block ms-3 mt-3 mb-3 link-dark text-decoration-none dropdown-toggle"
+            id="userpfp"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="33"
               fill="currentColor"
-              class="bi bi-person side-icon"
+              class="bi bi-person-circle"
               viewBox="0 0 16 16"
             >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
               <path
-                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
               />
             </svg>
-          </div>
-          <h5 class="my-auto mx-2" onclick="redirectHome()">Home</h5>
-        </div>
-        <div class="col-12 d-flex rounded-5 border w-50 p-2 icon-box logout">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              id="logout"
-              class="side-icon"
-            >
-              <path
-                d="M12.59,13l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H3a1,1,0,0,0,0,2ZM12,2A10,10,0,0,0,3,7.55a1,1,0,0,0,1.8.9A8,8,0,1,1,12,20a7.93,7.93,0,0,1-7.16-4.45,1,1,0,0,0-1.8.9A10,10,0,1,0,12,2Z"
-              ></path>
-            </svg>
-          </div>
-          <h5 class="my-auto mx-2" onclick="logout()">Log out</h5>
+          </a>
+          <ul
+            class="dropdown-menu text-small shadow"
+            aria-labelledby="userpfp"
+            data-popper-placement="top-start"
+          >
+            <li class="dropdown-item">Profile</li>
+            <li class="dropdown-item">Settings</li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li class="dropdown-item" onclick="logout()">Log Out</li>
+          </ul>
         </div>
       </div>
-      <div class="row col-6">
-        <section class="row create-post-container"></section>
-        <section class="row posts-container gap-3"></section>
+    </header>
+
+    <!-- profile header-->
+    <div class="row" id="profheader">
+      <div class="col-md-12">
+        <div class="fb-profile-block">
+          <div class="fb-profile-block-thumb cover-container">
+            <img
+              src="assests/images/pfpbg.jpg"
+              alt="profile header photo"
+              class="headerimg"
+            />
+          </div>
+          <div class="profile-img">
+            <a href="#">
+              <img
+                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                alt=""
+                title=""
+              />
+            </a>
+          </div>
+          <div class="profile-name"></div>
+
+          <div class="fb-profile-block-menu">
+            <div class="block-menu">
+              <ul id="profileBar">
+                <li><p id="postCount"></p></li>
+                <li><p id="totalLikes"></p></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
       </div>
-      <div class="col-3">ASIDE 2</div>
-    </main>
+    </div>
+
+    <div class="row d-flex justify-content-center gap-4 mt-4">
+      <div class="row col-8">
+        <section
+          class="row create-post-container justify-content-center"
+        ></section>
+        <section
+          class="row posts-container gap-3 justify-content-center"
+        ></section>
+      </div>
+    </div>
 
     <footer></footer>
 
-    <!-- Page-specific code -->
     <script src="js/helpers.js"></script>
     <script src="js/posting-funcs.js"></script>
     <script src="js/profile.js"></script>
