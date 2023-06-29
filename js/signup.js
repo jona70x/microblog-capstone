@@ -25,6 +25,10 @@ async function createNewUser() {
     window.location.href="signin.html"
 
    }
+
+   if(response.status === 400){
+    alert('Meow! Something went wrong. Try again 😿')
+   }
     
         
     } catch (error) {

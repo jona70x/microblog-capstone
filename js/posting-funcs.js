@@ -27,8 +27,6 @@ const sendPost = async (inputElement) => {
 // Generate posts
 
 const createPostsMarkup = async (postsArray) => {
-
-  
   for (const post of postsArray) {
     let likes = post.likes.length;
     const isLiked = !!post.likes.find((like) => like.username === username);
@@ -332,7 +330,7 @@ async function generatePostForm(formContainer) {
           ) {
             postsContainer.innerHTML = "";
             const posts = await getPosts();
-            const sortedPosts =  sortByLatestPosts(posts)
+            const sortedPosts = sortByLatestPosts(posts);
             if (sortedPosts) {
               createPostsMarkup(sortedPosts);
             }

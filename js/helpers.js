@@ -107,10 +107,10 @@ const deletePost = async (postId) => {
       },
       body: JSON.stringify({ postId }),
     });
-
+    
     if (response.ok) {
       postToDelete.classList.add("fade-in-animation");
-
+      
       setTimeout(function () {
         postToDelete.remove();
       }, 500);
@@ -166,3 +166,4 @@ logoutLink.addEventListener("click", () => {
 profileLink.addEventListener("click", () => {
   window.location.assign("/profile.html");
 });
+
