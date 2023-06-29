@@ -102,7 +102,7 @@ const showWhoLiked = async function(postId){
 
   likesContainer += `<div class="hide">Liked by ${likedByString}</div>`
 }
-showWhoLiked("649cf2fff9ba080f14e2683c");
+showWhoLiked("649dca3f486e0e04ad17a1b8");
 
 console.log(postArray);
 
