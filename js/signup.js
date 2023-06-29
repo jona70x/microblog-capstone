@@ -1,7 +1,8 @@
 "use strict";
 
-async function createNewUser() {
+async function createNewUser(event) {
   try {
+    event.preventDefault();
     const baseURL = "https://microbloglite.herokuapp.com/api/users";
     const username = document.getElementById("username").value;
     const fullname = document.getElementById("fullname").value;
@@ -20,7 +21,7 @@ async function createNewUser() {
     };
 
     const response = await fetch(baseURL, options);
-   
+
     if (response.status === 201) {
       alert("Meow! Sign up successfully. Sign in to see the posts!");
       window.location.href = "signin.html";

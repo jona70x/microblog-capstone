@@ -16,12 +16,11 @@ function redirectHome() {
   window.location.assign("/posts/");
 }
 
-
 // functions for profile header section
 
 let profileName = document.querySelector(".profile-name");
 function displayUsername() {
-  profileName.innerHTML = `<h2>${username}</h2>`;
+  profileName.innerHTML = `<h1 class='text-black display-6 fw-bold text-uppercase'>@${username}</h1>`;
 }
 
 function showPostsCount() {
@@ -42,46 +41,47 @@ function showTotalLikes() {
 let displayName = document.getElementById("profileDisplayName");
 let bio = document.getElementById("profileBio");
 
-function loadProfile(){
-  function initialInfo(info){
-    if(info.textContent === ""){
+function loadProfile() {
+  function initialInfo(info) {
+    if (info.textContent === "") {
       info.textContent = username;
       localStorage.setItem("displayName", username);
-    } else if (info.textContent === "bio"){
+    } else if (info.textContent === "bio") {
       localStorage.setItem("bio", bio.textContent);
       info.textContent = localStorage.getItem("bio");
     }
     return info.textContent;
   }
   localStorage.setItem("displayName", initialInfo(displayName));
-  
+
   localStorage.setItem("bio", initialInfo(bio));
 }
 
-function editProfile(){
+function editProfile() {
   let buttonsDiv = document.getElementById("editSaveButtons");
 
-  displayName.innerHTML= `<input type="text" id="displayNameInput" placeholder="display name"></input>`;
-  bio.innerHTML = `<textarea id="bioInput" placeholder="bio"></textarea>`;
+  displayName.innerHTML = `<input  class='form-control my-2' type="text" id="displayNameInput" placeholder="display name"></input>`;
+  bio.innerHTML = `<textarea class='form-control my-2' id="bioInput" placeholder="bio"></textarea>`;
   const saveButton = document.createElement("button");
   saveButton.textContent = "Save";
+  saveButton.classList.add("btn", "btn-dark");
   buttonsDiv.appendChild(saveButton);
 
   let displayNameInput = document.getElementById("displayNameInput");
   let bioInput = document.getElementById("bioInput");
   saveButton.addEventListener("click", saveChanges);
 
-  function saveChanges(){
+  function saveChanges() {
     localStorage.setItem("displayName", JSON.stringify(displayNameInput.value));
     displayName.innerHTML = `<h3>${displayNameInput.value}</h3>`;
 
-    localStorage.setItem("bio", JSON.stringify(bioInput.value))
+    localStorage.setItem("bio", JSON.stringify(bioInput.value));
     bio.innerHTML = `<div>${bioInput.value}<div>`;
     saveButton.style.visibility = "hidden";
   }
 }
 
-const showWhoLiked = async function(postId){
+const showWhoLiked = async function (postId) {
   const posts = await getPosts();
   let likesContainer = document.getElementById("likes-container");
   const likedPost = posts.find((post) => post._id === postId);
@@ -105,10 +105,10 @@ showWhoLiked("649cf2fff9ba080f14e2683c");
 
 postArray;
 
-window.addEventListener('load', async () => {
-  const avatar = await generateAvatar(username)
-  profileAvatar.src = avatar
-})
+window.addEventListener("load", async () => {
+  const avatar = await generateAvatar(username);
+  profileAvatar.src = avatar;
+});
 
 // display liked by
 // user info
