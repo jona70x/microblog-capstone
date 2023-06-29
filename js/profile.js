@@ -6,6 +6,7 @@ const profileAvatar = document.querySelector(".profile-avatar")
 window.addEventListener("load", async () => {
   const posts = await displayMyPosts();
   createPostsMarkup(posts);
+  loadProfile();
   displayUsername();
   showPostsCount();
   showTotalLikes();
@@ -14,7 +15,10 @@ window.addEventListener("load", async () => {
 function redirectHome() {
   window.location.assign("/posts/");
 }
-  
+
+
+// functions for profile header section
+
 let profileName = document.querySelector(".profile-name");
 function displayUsername(){
   profileName.innerHTML = `<h2>${username}</h2>`;
@@ -34,7 +38,48 @@ function showTotalLikes(){
   likesLi.innerHTML = `${likes} likes`
 }
 
+//functions for profile user info/bio section
+let displayName = document.getElementById("profileDisplayName");
+let bio = document.getElementById("profileBio");
 
+function loadProfile(){
+  function initialInfo(info){
+    if(info.textContent === ""){
+      info.textContent = username;
+      localStorage.setItem("displayName", username);
+    } else if (info.textContent === "bio"){
+      localStorage.setItem("bio", bio.textContent);
+      info.textContent = localStorage.getItem("bio");
+    }
+    return info.textContent;
+  }
+  localStorage.setItem("displayName", initialInfo(displayName));
+  
+  localStorage.setItem("bio", initialInfo(bio));
+}
+
+function editProfile(){
+  let buttonsDiv = document.getElementById("editSaveButtons");
+
+  displayName.innerHTML= `<input type="text" id="displayNameInput" placeholder="display name"></input>`;
+  bio.innerHTML = `<textarea id="bioInput" placeholder="bio"></textarea>`;
+  const saveButton = document.createElement("button");
+  saveButton.textContent = "Save";
+  buttonsDiv.appendChild(saveButton);
+
+  let displayNameInput = document.getElementById("displayNameInput");
+  let bioInput = document.getElementById("bioInput");
+  saveButton.addEventListener("click", saveChanges);
+
+  function saveChanges(){
+    localStorage.setItem("displayName", JSON.stringify(displayNameInput.value));
+    displayName.innerHTML = `<h3>${displayNameInput.value}</h3>`;
+
+    localStorage.setItem("bio", JSON.stringify(bioInput.value))
+    bio.innerHTML = `<div>${bioInput.value}<div>`;
+    saveButton.style.visibility = "hidden";
+  }
+}
 
 const showWhoLiked = async function(postId){
   const posts = await getPosts();
@@ -61,12 +106,11 @@ showWhoLiked("649cf2fff9ba080f14e2683c");
 
 console.log(postArray);
 
-//consistent profile pictures
 window.addEventListener('load', async () => {
   const avatar = await generateAvatar(username)
   profileAvatar.src = avatar
 })
 
-// profile pictures
 // display liked by
-// fix posts count
+// user info
+//posts ive liked
