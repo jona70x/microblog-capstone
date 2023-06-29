@@ -4,7 +4,10 @@ var _content = [
 	"feelings", 
 	"ideas", 
 	"questions",
-    "favorite places"
+    "favorite places",
+	"hobbies",
+	"opinions",
+	"recipes"
 ];
 
 var _part = 0;
