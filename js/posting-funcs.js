@@ -27,8 +27,6 @@ const sendPost = async (inputElement) => {
 // Generate posts
 
 const createPostsMarkup = async (postsArray) => {
-  postsContainer.innerHTML = "";
-  console.log(postsArray);
   for (const post of postsArray) {
     let likes = post.likes.length;
     const isLiked = !!post.likes.find((like) => like.username === username);
@@ -332,8 +330,9 @@ async function generatePostForm(formContainer) {
           ) {
             postsContainer.innerHTML = "";
             const posts = await getPosts();
-            if (posts) {
-              createPostsMarkup(posts);
+            const sortedPosts = sortByLatestPosts(posts);
+            if (sortedPosts) {
+              createPostsMarkup(sortedPosts);
             }
           } else if (
             responseInfo.ok &&
@@ -382,9 +381,9 @@ function delay(ms) {
 }
 
 async function example() {
-  console.log("Before delay");
+  ("Before delay");
 
   await delay(2000); // Delay of 2000 milliseconds (2 seconds)
 
-  console.log("After delay");
+  ("After delay");
 }

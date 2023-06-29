@@ -27,7 +27,10 @@
 
     <script src="js/auth.js"></script>
     <script>
-      if (isLoggedIn() === false) window.location.replace("/signin.html");
+      if (isLoggedIn() === false) {
+        alert("You are a silly cat😾 Log in first to access this page");
+        window.location.replace("/signin.html");
+      }
     </script>
 
     <title>My Page</title>
@@ -54,7 +57,7 @@
             <li>
               <a
                 class="nav-item nav-link link-dark mt-2 text-decoration-none"
-                href="/posts/index.html"
+                href="/homepage.html"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -144,12 +147,7 @@
           </div>
           <div class="profile-img">
             <a href="#">
-              <img
-                class="profile-avatar"
-                src=""
-                alt=""
-                title=""
-              />
+              <img class="profile-avatar" src="" alt="" title="" />
             </a>
           </div>
           <div class="profile-name"></div>
@@ -168,14 +166,16 @@
 
     <div class="d-flex justify-content-center gap-4 mt-4">
       <!-- user info/bio -->
-      <div class="user-profile-info col-3 align-self-start">
-        <div id="profileDisplayName"></div>
+      <div class="user-profile-info col-3 align-self-start p-1 fs-5">
+        <div class="fs-2 mt-1 mb-3 fw-bold" id="profileDisplayName"></div>
         <div id="profileBio">bio</div>
-        <div id="profileLocation">Location</div>
-        <div id="profileCreatedOn">Account created </div>
-        <hr>
+        <div class="fs-6 my-2" id="profileLocation">Location: Bay Area, CA</div>
+        <div class="fs-6 my-2" id="profileCreatedOn">Account created</div>
+        <hr />
         <div id="editSaveButtons">
-          <button onclick="editProfile()">Edit profile</button>
+          <button class="btn btn-dark" onclick="editProfile()">
+            Edit profile
+          </button>
         </div>
       </div>
       <!-- posts (create & all of user's posts) -->

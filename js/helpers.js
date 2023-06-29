@@ -146,7 +146,7 @@ const displayMyPosts = async () => {
     }
   );
   const data = await response.json();
-  // console.log(data);
+
   const username = getLoginData().username;
   for (let i = data.length - 1; i > 0; i--) {
     if (data[i].username === username) {
@@ -160,7 +160,7 @@ const displayMyPosts = async () => {
 };
 
 logoutLink.addEventListener("click", () => {
-  alert("You have been logged out");
+  alert("Meow 🐱 You have been logged out");
   logout();
 });
 profileLink.addEventListener("click", () => {

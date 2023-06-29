@@ -44,9 +44,14 @@
   <body>
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="js/auth.js"></script>
-    <!-- <script>
-      if (isLoggedIn() === true) window.location.replace("/posts");
-    </script> -->
+    <script>
+     
+      if (isLoggedIn() === true){
+        alert('Meow! You are already logged in😼 Go and check the posts')
+         window.location.replace("/posts/index.html")}
+
+    
+    </script>
     <header>
 
     </header>
@@ -82,6 +87,24 @@
               </p>
               </div>
               </form>
+
+              <!-- <div class="row mt-4">
+                <div class="col">
+                <img src="assests/images/peek.png" id="peek" style="width:70px; position: relative; top: 30%;">
+                </div>
+                <div class="col-8">
+                <small class="text-body-secondary" style="position: relative; top: 30%; right: 12%;">Pssst! Not what you're looking for? <a href="homepage.html" class="text-dark">Go back home.</a></small>
+                </div>
+              </div> -->
+
+              <div class="row mt-4">
+                <div class="col">
+                <a href="homepage.html"><img src="assests/images/peek.png" id="peek" style="width:70px; position: relative; top: 30%;"></a>
+                </div>
+                <div class="col-8">
+                <small class="text-body-secondary" style="position: relative; top: 30%; right: 12%;">Pssst! Click the kitty to find your way back home.</small>
+                </div>
+              </div>
           </div>
         </div>
       </div>

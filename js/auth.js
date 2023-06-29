@@ -39,6 +39,7 @@ function login(loginData) {
   return fetch(apiBaseURL + "/auth/login", options)
     .then((response) => response.json())
     .then((loginData) => {
+      alert("Meow! Login successful 😼");
       window.localStorage.setItem("login-data", JSON.stringify(loginData));
       window.location.assign("/posts/"); // redirect
 
@@ -67,13 +68,13 @@ function logout() {
 
   fetch(apiBaseURL + "/auth/logout", options)
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => data)
     .finally(() => {
       // We're using `finally()` so that we will continue with the
       // browser side of logging out (below) even if there is an
       // error with the fetch request above.
 
       window.localStorage.removeItem("login-data"); // remove login data from LocalStorage
-      window.location.assign("/signin.html"); // redirect back to landing page
+      window.location.assign("/homepage.html"); // redirect back to landing page
     });
 }
