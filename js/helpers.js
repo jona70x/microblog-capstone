@@ -3,8 +3,8 @@
 // This file  contains the helpers functions to generate avatars, posts, and the functionality that posts and profile sharte.  It will make it available for everyone to use.
 let { token, username } = getLoginData();
 
-// const profileLink = document.querySelector(".profile-link");
-// const logoutLink = document.querySelector(".profile-logout");
+const profileLink = document.querySelector(".profile-link");
+const logoutLink = document.querySelector(".profile-logout");
 
 const avatarStyles = [
   "big-smile",
@@ -116,7 +116,6 @@ const deletePost = async (postId) => {
       }, 500);
     }
   }
-  
 };
 
 // Get all posts
@@ -160,10 +159,10 @@ const displayMyPosts = async () => {
   return myPostArray;
 };
 
-// logoutLink.addEventListener("click", () => {
-//   alert("You have been logged out");
-//   logout();
-// });
-// profileLink.addEventListener("click", () => {
-//   window.location.assign("/profile.html");
-// });
+logoutLink.addEventListener("click", () => {
+  alert("You have been logged out");
+  logout();
+});
+profileLink.addEventListener("click", () => {
+  window.location.assign("/profile.html");
+});

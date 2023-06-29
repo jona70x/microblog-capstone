@@ -28,6 +28,7 @@ const sendPost = async (inputElement) => {
 
 const createPostsMarkup = async (postsArray) => {
   postsContainer.innerHTML = "";
+  console.log(postsArray);
   for (const post of postsArray) {
     let likes = post.likes.length;
     const isLiked = !!post.likes.find((like) => like.username === username);
@@ -76,9 +77,11 @@ const createPostsMarkup = async (postsArray) => {
 
       <div class="d-flex my-0 justify-content-between">
       
-        <p class='text-muted' onmousehover="showWhoLiked(${post._id})" id='likes-container' data-post-id-likes="${
+        <p class='text-muted' onmousehover="showWhoLiked(${
           post._id
-        }" >${likes} People liked this</p>
+        })" id='likes-container' data-post-id-likes="${
+      post._id
+    }" >${likes} People liked this</p>
      
       <div class='d-flex gap-1'>
         <button
