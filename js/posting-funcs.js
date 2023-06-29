@@ -323,8 +323,11 @@ async function generatePostForm(formContainer) {
           alert("Your dump is too short 😿 10 characters minimum");
         } else {
           const responseInfo = await sendPost(postTextarea);
-          if (responseInfo.ok && window.location.pathname === "/posts/index.html") {
-            postsContainer.innerHTML = ''
+          if (
+            responseInfo.ok &&
+            window.location.pathname === "/posts/index.html"
+          ) {
+            postsContainer.innerHTML = "";
             const posts = await getPosts();
             if (posts) {
               createPostsMarkup(posts);
@@ -333,6 +336,7 @@ async function generatePostForm(formContainer) {
             responseInfo.ok &&
             window.location.pathname === "/profile.html"
           ) {
+            postsContainer.innerHTML = "";
             const posts = await displayMyPosts();
             if (posts) {
               createPostsMarkup(posts);

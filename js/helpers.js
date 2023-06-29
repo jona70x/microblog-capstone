@@ -3,8 +3,8 @@
 // This file  contains the helpers functions to generate avatars, posts, and the functionality that posts and profile sharte.  It will make it available for everyone to use.
 let { token, username } = getLoginData();
 
-const profileLink = document.querySelector(".profile-link");
-const logoutLink = document.querySelector(".profile-logout");
+// const profileLink = document.querySelector(".profile-link");
+// const logoutLink = document.querySelector(".profile-logout");
 
 const avatarStyles = [
   "big-smile",
@@ -116,7 +116,7 @@ const deletePost = async (postId) => {
       }, 500);
     }
   }
-  window.location.reload();
+  
 };
 
 // Get all posts
@@ -134,8 +134,11 @@ const getPosts = async () => {
 
 // Sammi's function
 var postsCount = 0;
-let postArray = []; // array of user's posts
+let postArray = []; // array of user's postsﬁ
 const displayMyPosts = async () => {
+  const myPostArray = [];
+  postsContainer.innerHTML = "";
+
   const response = await fetch(
     "https://microbloglite.herokuapp.com/api/posts?limit=500",
     {
@@ -148,18 +151,19 @@ const displayMyPosts = async () => {
   const username = getLoginData().username;
   for (let i = data.length - 1; i > 0; i--) {
     if (data[i].username === username) {
-      postArray.push(data[i]);
-      postsCount++; 
+      myPostArray.push(data[i]);
+      postsCount++;
     }
   }
-  postsCount = postArray.length;
-  return postArray;
+  postArray = myPostArray;
+  postsCount = myPostArray.length;
+  return myPostArray;
 };
 
-logoutLink.addEventListener("click", () => {
-  alert("You have been logged out");
-  logout();
-});
-profileLink.addEventListener("click", () => {
-  window.location.assign("/profile.html");
-});
+// logoutLink.addEventListener("click", () => {
+//   alert("You have been logged out");
+//   logout();
+// });
+// profileLink.addEventListener("click", () => {
+//   window.location.assign("/profile.html");
+// });
